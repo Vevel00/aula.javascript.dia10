@@ -1,35 +1,65 @@
-//let jogadores = [`Cris`, `Courtois`, `Vini`, `Messi`];
-//let jogadoresComC = jogadores.filter(jogador => jogador.toLowerCase().startsWith("c"));
-//console.log(jogadoresComC);
+let jogadores = [`Cris`, `Courtois`, `Vini`, `Messi`];
+let jogadoresComC = jogadores.filter(jogador => jogador.toLowerCase().startsWith("c"));
+console.log(jogadoresComC);
 
 
 
-//let jogadores = ['cris', 'modric', 'messi', 'musiala'];
-//jogadores.push('neymar');
-//console.log(jogadores);
+let jogadores = ['cris', 'modric', 'messi', 'musiala'];
+jogadores.push('neymar');
+console.log(jogadores);
 
 
 
-//let aluno = [`cristiano` , `kaio` , `gabi` , `cassio`];
-//aluno.shift()
-//console.log(aluno)
+let aluno = [`cristiano` , `kaio` , `gabi` , `cassio`];
+aluno.shift()
+console.log(aluno)
 
 
-//let jogadores = [`kaiki`, `bolasie` , `luvannor`, `gotze`];
-//for (let i = 0; i < jogadores.length; i++) {
- //  console.log (jogadores[i]);
+let jogadores = [`kaiki`, `bolasie` , `luvannor`, `gotze`];
+for (let i = 0; i < jogadores.length; i++) {
+   console.log (jogadores[i]);
 
 
-//let jogadores = ['Cris', 'Modric', 'Messi', 'Musiala'];
-//let jogadoresMinusculos = jogadores.map(jogador => jogador.toLowerCase());
-//console.log (jogadoresMinusculos)
+let jogadores = ['Cris', 'Modric', 'Messi', 'Musiala'];
+let jogadoresMinusculos = jogadores.map(jogador => jogador.toLowerCase());
+console.log (jogadoresMinusculos)
 
 
-//let jogadores = [`cristianinho` , `constantino` , `octavianoo` , `cassio` , `kaiki`];
-//let jogadoresNomesLongo = jogadores.filter(jogador => jogador.length > 10);
-//console.log(jogadoresNomesLongo)
+let jogadores = [`cristianinho` , `constantino` , `octavianoo` , `cassio` , `kaiki`];
+let jogadoresNomesLongo = jogadores.filter(jogador => jogador.length > 10);
+console.log(jogadoresNomesLongo)
 
 
+let jogadores = [`yamal`, `ney` , `messi` , `cris`];
+jogadores.splice(1,2);
+console.log (jogadores);
 
 
+const jogadores = [
+  { nome: "Ney", gols: 3 },
+  { nome: "Ronaldinho G", gols: 30 },
+  { nome: "Cristiano", gols: 14 },
+  { nome: "Vampeta", gols: 8 }
+];
+const jogadoresComMaisDe10Gols = jogadores.filter(jogador => jogador.gols > 10);
+console.log(jogadoresComMaisDe10Gols);
 
+
+const jogadores = [
+  {nome: "Ney", gols: 3},
+  {nome: "Ronaldinho G", gols: 30},
+  {nome: "Cristiano", gols: 14},
+  {nome: "Vampeta", gols: 8},
+];
+const nomes = jogadores.map(jogador => jogador.nome);
+console.log(nomes); 
+
+
+const jogador = {
+  nome: "Neymar",
+  idade: 33,
+  posição: "Atacante"
+};
+console.log(jogador.nome);     
+console.log(jogador.idade);    
+console.log(jogador.posição);  
