@@ -66,3 +66,190 @@ foreach ($nomes as $nome) {
 }
 ?>
 ------------------------------------------------------------------------------------------------------
+7) <?php
+$produtos = [
+    ["nome" => "Teclado", "preco" => 120.50, "quantidade" => 10],
+    ["nome" => "Mouse", "preco" => 80.00, "quantidade" => 15],
+    ["nome" => "Monitor", "preco" => 950.75, "quantidade" => 5],
+    ["nome" => "Cadeira Gamer", "preco" => 1350.00, "quantidade" => 2],
+];
+
+$totalGeral = 0;
+
+echo "<h3>Relatório de Estoque</h3>";
+
+foreach ($produtos as $produto) {
+    $subtotal = $produto["preco"] * $produto["quantidade"];
+    echo "Produto: {$produto['nome']}<br>";
+    echo "Preço: R$ " . number_format($produto["preco"], 2, ",", ".") . "<br>";
+    echo "Quantidade: {$produto['quantidade']}<br>";
+    echo "Subtotal: R$ " . number_format($subtotal, 2, ",", ".") . "<br><br>";
+
+    $totalGeral += $subtotal;
+}
+
+echo "<strong>Valor total em estoque: R$ " . number_format($totalGeral, 2, ",", ".") . "</strong>";
+?>
+---------------------------------------------------------------------------------------------------------
+8) <?php
+$contador = 10;
+
+do {
+    echo $contador . "<br>";
+    $contador--;
+} while ($contador >= 1);
+
+echo "Lançar!";
+?>
+----------------------------------------------------------------------------------------------------------
+9) <?php
+$vendas = [120, 80, 200, 150, 90, 50];
+
+$total = 0;
+$dias = 0;
+
+foreach ($vendas as $valor) {
+    $total += $valor;
+    $dias++;
+
+    if ($total >= 500) {
+        break; 
+    }
+}
+
+echo "Meta de R$ 500 atingida em $dias dia <br>";
+echo "Total acumulado: R$ " . number_format($total, 2, ",", ".");
+?>
+------------------------------------------------------------------------------------------------------------
+10) <?php
+$produtos = [
+    ["nome" => "HD 1TB", "categoria" => "armazenamento", "preco" => 250],
+    ["nome" => "SSD 500GB", "categoria" => "armazenamento", "preco" => 350],
+    ["nome" => "Monitor 24\"", "categoria" => "periférico", "preco" => 900],
+    ["nome" => "Teclado Mecânico", "categoria" => "periférico", "preco" => 450],
+    ["nome" => "Pendrive 64GB", "categoria" => "armazenamento", "preco" => 70],
+];
+
+echo "<h3>Produtos da categoria: Armazenamento</h3>";
+
+foreach ($produtos as $produto) {
+    if ($produto["categoria"] === "armazenamento") {
+        echo "Produto: {$produto['nome']} - R$ " . number_format($produto['preco'], 2, ",", ".") . "<br>";
+    }
+}
+?>
+--------------------------------------------------------------------------------------------------------------
+11) <?php
+$pontos = [85, 92, 78, 100, 67, 89];
+
+$maior = $pontos[0];
+$menor = $pontos[0];
+
+foreach ($pontos as $p) {
+    if ($p > $maior) {
+        $maior = $p;
+    }
+    if ($p < $menor) {
+        $menor = $p;
+    }
+}
+
+echo "Maior pontuação: $maior<br>";
+echo "Menor pontuação: $menor";
+?>
+-----------------------------------------------------------------------------------------------------------------
+12) <?php
+$alunos = [
+    "Ana"   => [true, true, true, false, true],
+    "João"  => [true, false, false, true, false],
+    "Maria" => [true, true, true, true, true],
+    "Pedro" => [false, true, true, true, false],
+];
+
+echo "<h3>Alunos com frequência ≥ 75%</h3>";
+
+foreach ($alunos as $nome => $presencas) {
+    $totalAulas = count($presencas);
+    $presentes = 0;
+
+    foreach ($presencas as $p) {
+        if ($p) {
+            $presentes++;
+        }
+    }
+
+    $percentual = ($presentes / $totalAulas) * 100;
+
+    if ($percentual >= 75) {
+        echo "$nome — " . number_format($percentual, 1, ",", ".") . "%<br>";
+    }
+}
+?>
+-------------------------------------------------------------------------------------------------------------------
+13) <?php
+$pedidos = [
+    ["total" => 250.00, "status" => "pago"],
+    ["total" => 120.50, "status" => "pendente"],
+    ["total" => 340.75, "status" => "pago"],
+    ["total" => 89.90,  "status" => "cancelado"],
+    ["total" => 150.00, "status" => "pago"],
+];
+
+$soma = 0;
+$contagem = 0;
+
+foreach ($pedidos as $pedido) {
+    if ($pedido["status"] === "pago") {
+        $soma += $pedido["total"];
+        $contagem++;
+    }
+}
+
+if ($contagem > 0) {
+    $ticketMedio = $soma / $contagem;
+    echo "Ticket médio dos pedidos pagos: R$ " . number_format($ticketMedio, 2, ",", ".");
+} else {
+    echo "Nenhum pedido pago.";
+}
+?>
+----------------------------------------------------------------------------------------------------------------------
+14) <?php
+$codigos = [200, 404, 200, 404, 500, 404, 200, 404];
+
+$encontrado = false;
+
+for ($i = 0; $i < count($codigos) - 2; $i++) {
+    if ($codigos[$i] === 404 && $codigos[$i+1] === 200 && $codigos[$i+2] === 404) {
+        $encontrado = true;
+        break;
+    }
+}
+
+if ($encontrado) {
+    echo "Sequência 404, 200, 404 encontrada!";
+} else {
+    echo "Sequência não encontrada.";
+}
+?>
+-----------------------------------------------------------------------------------------------------------------------
+15) <?php
+$livros = [
+    ["titulo" => "O Pequeno Príncipe", "disponivel" => true],
+    ["titulo" => "1984", "disponivel" => true],
+    ["titulo" => "Dom Casmurro", "disponivel" => false],
+    ["titulo" => "Memórias Póstumas de Brás Cubas", "disponivel" => true],
+];
+
+foreach ($livros as $livro) {
+    if (!$livro["disponivel"]) {
+        echo "Primeiro livro indisponível: " . $livro["titulo"];
+        break;
+    }
+}
+?>
+---------------------------------------------------------------------------------------------------------------------------
+16) 
+
+
+
+
