@@ -27,3 +27,42 @@ for ($i = 1; $i <= 100; $i++) {
 echo "A soma de todos os números pares entre 1 e 100 é: $soma";
 ?>
 -----------------------------------------------------------------------------------------------
+4) <?php
+
+$notas = [8.5, 7.0, 9.3, 6.7, 8.0];
+$soma = 0;
+
+foreach ($notas as $nota) {
+    $soma += $nota;
+}
+
+$media = $soma / count($notas);
+
+echo "Média: " . number_format($media, 1, ".", "");
+?>
+------------------------------------------------------------------------------------------------
+5) <?php
+$leituras = [10, 12, 15, 15, 18, 18, 20];
+$anterior = null;
+
+foreach ($leituras as $valor) {
+    if ($valor === $anterior) {
+        echo "Primeiro valor repetido consecutivamente: $valor";
+        break;
+    }
+    $anterior = $valor;
+}
+?>
+
+-------------------------------------------------------------------------------------------------
+6) <?php
+$nomes = ["  ana", "", "  joão  ", "maria", " ", "pedro   "];
+
+foreach ($nomes as $nome) {
+    $nome = trim($nome); 
+    if (!empty($nome)) { 
+        echo ucfirst(strtolower($nome)) ."<br>";
+    }
+}
+?>
+------------------------------------------------------------------------------------------------------
