@@ -248,7 +248,118 @@ foreach ($livros as $livro) {
 }
 ?>
 ---------------------------------------------------------------------------------------------------------------------------
-16) 
+16) <?php
+
+$cadastros = [
+    ['nome' => 'João', 'email' => 'joao@example.com', 'idade' => 25, 'senha' => 'senha123'],
+    ['nome' => '', 'email' => 'maria@example.com', 'idade' => 30, 'senha' => 'abc'],
+    ['nome' => 'Pedro', 'email' => 'pedroexample.com', 'idade' => 40, 'senha' => 'segura!'],
+    ['nome' => 'Ana', 'email' => 'ana@example.com', 'idade' => 17, 'senha' => 'senhaAna'],
+    ['nome' => 'Carlos', 'email' => 'carlos@example.com', 'idade' => 28, 'senha' => 'segura123'],
+];
+
+// Função para validar um cadastro
+function validarCadastro($cadastro) {
+    if (empty($cadastro['nome'])) {
+        return "Nome inválido";
+    }
+
+    if (!filter_var($cadastro['email'], FILTER_VALIDATE_EMAIL)) {
+        return "Email inválido";
+    }
+
+    if (!is_numeric($cadastro['idade']) || $cadastro['idade'] < 18) {
+        return "Idade inválida (menor de 18)";
+    }
+
+    if (strlen($cadastro['senha']) < 6) {
+        return "Senha muito curta";
+    }
+
+    return "OK";
+}
+
+
+foreach ($cadastros as $index => $cadastro) {
+    $resultado = validarCadastro($cadastro);
+    echo "Cadastro #" . ($index + 1) . ": $resultado\n";
+}
+-------------------------------------------------------------------------------------------------------------------------
+17) <?php
+
+$temperaturas = [18, 22, 27, 19, 20, 25, 30, 15, 24, 21, 26];
+$frio = 0;
+$ameno = 0;
+$quente = 0;
+
+foreach ($temperaturas as $temp) {
+    if ($temp < 20) {
+        $frio++;
+    } elseif ($temp <= 25) {
+        $ameno++;
+    } else {
+        $quente++;
+    }
+}
+
+echo "Frio: $frio\n";
+echo "Ameno: $ameno\n";
+echo "Quente: $quente\n";
+---------------------------------------------------------------------------------------------------------------------------------
+18) <?php
+
+$produtos = [
+    ['nome' => 'Arroz', 'estoque' => 10],
+    ['nome' => 'Feijão', 'estoque' => 0],
+    ['nome' => 'Macarrão', 'estoque' => 5],
+    ['nome' => 'Óleo', 'estoque' => 0],
+    ['nome' => 'Açúcar', 'estoque' => 3],
+    ['nome' => 'Café', 'estoque' => 0],
+];
+
+
+$rupturas = 0;
+
+echo "Produtos com ruptura de estoque:\n";
+
+foreach ($produtos as $produto) {
+    if ($produto['estoque'] == 0) {
+        echo "- " . $produto['nome'] . "\n";
+        $rupturas++;
+    }
+}
+
+
+echo "Total de rupturas: $rupturas\n";
+--------------------------------------------------------------------------------------------------------------------------------
+19) <?php
+$tentativas = 0;
+
+do {
+    $numero = rand(1, 100); 
+    $tentativas++;
+    echo "Tentativa $tentativas: $numero\n";
+} while ($numero != 50);
+echo "Número 50 sorteado após $tentativas tentativas.\n";
+----------------------------------------------------------------------------------------------------------------------------------
+20) <?php
+$linhas = 5;
+$colunas = 4;
+
+echo "<table border='1' cellpadding='10' cellspacing='0'>";
+
+$numero = 1;
+
+for ($i = 0; $i < $linhas; $i++) {
+    echo "<tr>";
+    for ($j = 0; $j < $colunas; $j++) {
+        echo "<td>$numero</td>";
+        $numero++;
+    }
+    echo "</tr>";
+}
+echo "</table>";
+------------------------------------------------------------------------------------------------------------------------------------
 
 
 
